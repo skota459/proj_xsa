@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Calculation:scenario xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:Calculation="http://www.sap.com/ndb/BiModelCalculation.ecore" id="core.models::PRODUCTS" applyPrivilegeType="NONE" dataCategory="DIMENSION" dimensionType="STANDARD" schemaVersion="3.0" outputViewType="Projection" cacheInvalidationPeriod="NONE" enforceSqlExecution="false">
+<descriptions defaultDescription="PRODUCTS"/>
+<localVariables/>
+<variableMappings/>
+<dataSources>
+  <DataSource id="SO.salesOrderView">
+    <resourceUri>SO.salesOrderView</resourceUri>
+  </DataSource>
+  <DataSource id="SO.salesOrderKeyView">
+    <resourceUri>SO.salesOrderKeyView</resourceUri>
+  </DataSource>
+</dataSources>
+<calculationViews>
+  <calculationView xsi:type="Calculation:JoinView" id="Product_BP" cardinality="C1_1" joinType="inner">
+    <viewAttributes>
+      <viewAttribute id="id"/>
+      <viewAttribute id="customerCountry"/>
+      <viewAttribute id="employeeLanguage"/>
+      <viewAttribute id="currencyCode"/>
+      <viewAttribute id="grossAmount"/>
+      <viewAttribute id="netAmount"/>
+      <viewAttribute id="taxAmount"/>
+      <viewAttribute id="lifecycleStatus"/>
+      <viewAttribute id="billingStatus"/>
+      <viewAttribute id="deliveryStatus"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="SO.salesOrderView">
+      <mapping xsi:type="Calculation:AttributeMapping" target="id" source="id"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="customerCountry" source="customerCountry"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="employeeLanguage" source="employeeLanguage"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="currencyCode" source="currencyCode"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="grossAmount" source="grossAmount"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="netAmount" source="netAmount"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="taxAmount" source="taxAmount"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="lifecycleStatus" source="lifecycleStatus"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="billingStatus" source="billingStatus"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="deliveryStatus" source="deliveryStatus"/>
+    </input>
+    <input node="SO.salesOrderKeyView">
+      <mapping xsi:type="Calculation:AttributeMapping" target="id" source="id"/>
+    </input>
+    <joinAttribute name="id"/>
+  </calculationView>
+</calculationViews>
+<logicalModel id="Product_BP">
+  <attributes>
+    <attribute id="id" order="1" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="id"/>
+      <keyMapping columnObjectName="Product_BP" columnName="id"/>
+    </attribute>
+    <attribute id="customerCountry" order="2" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="customerCountry"/>
+      <keyMapping columnObjectName="Product_BP" columnName="customerCountry"/>
+    </attribute>
+    <attribute id="employeeLanguage" order="3" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="employeeLanguage"/>
+      <keyMapping columnObjectName="Product_BP" columnName="employeeLanguage"/>
+    </attribute>
+    <attribute id="currencyCode" order="4" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="currencyCode"/>
+      <keyMapping columnObjectName="Product_BP" columnName="currencyCode"/>
+    </attribute>
+    <attribute id="grossAmount" order="5" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="grossAmount"/>
+      <keyMapping columnObjectName="Product_BP" columnName="grossAmount"/>
+    </attribute>
+    <attribute id="netAmount" order="6" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="netAmount"/>
+      <keyMapping columnObjectName="Product_BP" columnName="netAmount"/>
+    </attribute>
+    <attribute id="taxAmount" order="7" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="taxAmount"/>
+      <keyMapping columnObjectName="Product_BP" columnName="taxAmount"/>
+    </attribute>
+    <attribute id="lifecycleStatus" order="8" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="lifecycleStatus"/>
+      <keyMapping columnObjectName="Product_BP" columnName="lifecycleStatus"/>
+    </attribute>
+    <attribute id="billingStatus" order="9" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="billingStatus"/>
+      <keyMapping columnObjectName="Product_BP" columnName="billingStatus"/>
+    </attribute>
+    <attribute id="deliveryStatus" order="10" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="deliveryStatus"/>
+      <keyMapping columnObjectName="Product_BP" columnName="deliveryStatus"/>
+    </attribute>
+  </attributes>
+  <calculatedAttributes/>
+  <baseMeasures/>
+  <calculatedMeasures/>
+  <restrictedMeasures/>
+</logicalModel>
+<layout>
+  <shapes>
+    <shape expanded="true" modelObjectName="Output" modelObjectNameSpace="MeasureGroup">
+      <upperLeftCorner x="100" y="105"/>
+    
+      <rectangleSize width="160"/>
+    </shape>
+  
+    <shape expanded="true" modelObjectName="Product_BP" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="2" y="390"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+    <shape modelObjectName="SO.salesOrderView" modelObjectNameSpace="Product_BP" modelObjectType="JoinNodeInput">
+      <upperLeftCorner x="20" y="30"/>
+      <rectangleSize width="182.63671875"/>
+    </shape>
+    <shape modelObjectName="SO.salesOrderKeyView" modelObjectNameSpace="Product_BP" modelObjectType="JoinNodeInput">
+      <upperLeftCorner x="320" y="30"/>
+      <rectangleSize width="196.521484375"/>
+    </shape>
+  </shapes>
+</layout>
+</Calculation:scenario>

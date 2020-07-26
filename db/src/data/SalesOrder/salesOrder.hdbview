@@ -19,4 +19,4 @@ VIEW "SO.salesOrderView"
 	 "Header_$0"."LIFECYCLESTATUS" AS "lifecycleStatus" ,
 	 "Header_$0"."BILLINGSTATUS" AS "billingStatus" ,
 	 "Header_$0"."DELIVERYSTATUS" AS "deliveryStatus" 
-FROM "SO.Header" AS "Header_$0" WITH READ ONLY STRUCTURED PRIVILEGE CHECK
+FROM "SO.Header" AS "Header_$0" WITH READ ONLY --STRUCTURED PRIVILEGE CHECK
