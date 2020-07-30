@@ -10,5 +10,5 @@
 		"source": "(.*)(.xsodata)",
 		"destination": "xsjs_api",
 		"authenticationType": "xsuaa"
-	}]
+	}] 
 }
